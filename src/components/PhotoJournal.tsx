@@ -6,7 +6,7 @@ const journalImages = [
 { src: imageAssets.journal, alt: "A coastal cafe stop", className: "row-span-2 min-h-[420px]" },
 { src: imageAssets.fort, alt: "Galle Fort in morning light", className: "min-h-[200px]" },
 { src: imageAssets.hero, alt: "Rider on the Galle coast", className: "min-h-[200px]" },
-{ src: imageAssets.motorbike, alt: "Motorbike ready for a coastal route", className: "col-span-2 min-h-[240px]" }];
+{ src: imageAssets.motorbike, alt: "Motorbike ready for a coastal route", className: "min-h-[240px] sm:col-span-2" }];
 
 
 export function PhotoJournal() {

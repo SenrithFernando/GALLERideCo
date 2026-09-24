@@ -25,7 +25,7 @@ export function Hero({ onBook }: HeroProps) {
       <a href="#story" className="absolute bottom-9 right-5 flex flex-col items-center gap-2 text-[9px] font-bold uppercase tracking-[.2em] text-ivory/80 sm:right-10"><span className="hidden sm:block">Scroll to explore</span><ArrowDownIcon size={17} className="animate-bounce" /></a>
     </section>
     <section className="relative z-10 -mt-16 px-4 sm:-mt-20 sm:px-8 lg:px-12">
-      <form onSubmit={submitBooking} className="mx-auto grid max-w-[1320px] gap-px bg-ink/15 shadow-2xl sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.1fr_auto]">
+      <form onSubmit={submitBooking} className="mx-auto grid max-w-[1320px] gap-px bg-ink/15 shadow-2xl sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.1fr_minmax(0,1fr)]">
         <BookingField icon={<CalendarDaysIcon size={17} />} label="Pickup date" value="14 Nov 2026" />
         <BookingField icon={<CalendarDaysIcon size={17} />} label="Return date" value="18 Nov 2026" />
         <BookingField icon={<ChevronDownIcon size={17} />} label="Bike type" value="Any bike" />

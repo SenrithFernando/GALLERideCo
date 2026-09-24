@@ -3,7 +3,10 @@ export const imageAssets = {
   scooter: "/34e7c3f6-a8c6-435e-88d4-682a8024bde5.jpg",
   motorbike: "/fe732fac-1094-4c26-a1f0-216e9d135b17.jpg",
   fort: "/f10b624e-3273-44cb-9875-0bf8d82a140e.jpg",
-  journal: "/7fba6ad9-489d-4e3a-b909-82864355a3ef.jpg"
+  journal: "/7fba6ad9-489d-4e3a-b909-82864355a3ef.jpg",
+  galleFort: "/galle-fort-lighthouse.jpg",
+  galleSurf: "/galle-dewata-surf.jpg",
+  mirissa: "/mirissa-coconut-tree-hill.jpg"
 };
 
 export type BikeCategory = "All" | "Scooters" | "Motorbikes" | "Premium";
@@ -15,10 +18,10 @@ export const bikes = [
 
 
 export const destinations = [
-{ name: "Galle Fort", distance: "2 km from Galle", time: "8 min ride", copy: "Golden walls, ocean air and a slow lap around the old town.", image: imageAssets.fort, size: "large" },
+{ name: "Galle Fort", distance: "2 km from Galle", time: "8 min ride", copy: "Golden walls, ocean air and a slow lap around the old town.", image: imageAssets.galleFort, size: "large" },
 { name: "Unawatuna", distance: "6 km from Galle", time: "18 min ride", copy: "A sun-washed bay with a quieter route to Jungle Beach.", image: imageAssets.hero, size: "tall" },
 { name: "Ahangama", distance: "24 km from Galle", time: "45 min ride", copy: "Palm-lined curves, surf breaks and roadside coffee stops.", image: imageAssets.journal, size: "wide" },
-{ name: "Mirissa", distance: "42 km from Galle", time: "75 min ride", copy: "Take the coast south for beaches that deserve an unhurried afternoon.", image: imageAssets.fort, size: "small" }];
+{ name: "Mirissa", distance: "42 km from Galle", time: "75 min ride", copy: "Take the coast south for beaches that deserve an unhurried afternoon.", image: imageAssets.mirissa, size: "small" }];
 
 
 export const reviews = [
