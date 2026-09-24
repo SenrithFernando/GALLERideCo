@@ -1,0 +1,9 @@
+import React, { useState } from "react";
+import { ChevronDownIcon } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { faqs } from "../data/content";
+
+export function FAQ() {
+  const [open, setOpen] = useState(0);
+  return <section className="w-full bg-sand py-24 sm:py-32"><div className="mx-auto grid max-w-[1440px] gap-10 px-5 sm:px-8 lg:grid-cols-[.75fr_1.25fr] lg:px-12"><div><p className="mb-5 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-copper"><span className="h-px w-9 bg-copper" />Good to know</p><h2 className="font-display text-[clamp(2.5rem,4.2vw,3.8rem)] uppercase leading-[.9] tracking-[-.03em] text-ink">Before you set off</h2><p className="mt-6 max-w-sm text-[15px] leading-7 text-ink/65">Everything you need to know about renting and riding around the south coast.</p></div><div className="border-t border-ink/15">{faqs.map(([question, answer], index) => <div key={question} className="border-b border-ink/15"><button onClick={() => setOpen(open === index ? -1 : index)} className="flex w-full items-center justify-between gap-5 py-5 text-left"><span className="font-display text-xl uppercase tracking-[-.01em] text-ink sm:text-2xl">{question}</span><ChevronDownIcon className={`shrink-0 transition-transform duration-200 ${open === index ? "rotate-180 text-copper" : ""}`} size={20} /></button><AnimatePresence initial={false}>{open === index && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: .22, ease: "easeOut" }} className="overflow-hidden"><p className="max-w-xl pb-6 text-[14px] leading-7 text-ink/65">{answer}</p></motion.div>}</AnimatePresence></div>)}</div></div></section>;
+}

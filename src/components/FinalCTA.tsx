@@ -1,0 +1,8 @@
+import React from "react";
+import { ArrowDownRightIcon, MessageCircleIcon } from "lucide-react";
+import { imageAssets } from "../data/content";
+
+interface FinalCTAProps {onBook: () => void;}
+export function FinalCTA({ onBook }: FinalCTAProps) {
+  return <section className="relative w-full overflow-hidden bg-ink py-28 sm:py-36"><img src={imageAssets.hero} alt="Coastal road near Galle" className="absolute inset-0 h-full w-full object-cover object-[70%_center] opacity-50" /><div className="absolute inset-0 bg-ink/55" /><div className="relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12"><p className="mb-5 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-copper"><span className="h-px w-9 bg-copper" />Your next stop: the open road</p><h2 className="max-w-4xl font-display text-[clamp(3rem,7vw,6.5rem)] uppercase leading-[.84] tracking-[-.045em] text-ivory">Your Sri Lankan adventure starts here.</h2><p className="mt-7 max-w-md text-[15px] leading-7 text-ivory/80">Choose your bike, pack light and discover the south at your own pace.</p><div className="mt-9 flex flex-wrap gap-3"><button onClick={onBook} className="flex items-center gap-4 bg-copper px-6 py-4 text-[11px] font-black uppercase tracking-[.14em] text-ink transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-ivory">Book your bike <ArrowDownRightIcon size={16} /></button><a href="https://wa.me/94770000000" className="flex items-center gap-3 border border-ivory/35 px-6 py-4 text-[11px] font-black uppercase tracking-[.14em] text-ivory transition-[border-color,color] duration-200 hover:border-copper hover:text-copper"><MessageCircleIcon size={16} /> Chat on WhatsApp</a></div></div></section>;
+}

@@ -1,0 +1,9 @@
+import React from "react";
+import { imageAssets } from "../data/content";
+
+const reasons = ["Well-maintained bikes", "Clean helmets included", "Easy tourist booking", "Flexible rental periods", "Local roadside support", "Pickup & delivery options"];
+const stats = [["500+", "Happy riders"], ["20+", "Available bikes"], ["4.9/5", "Customer rating"], ["7 days", "Support"]];
+
+export function WhyUs() {
+  return <section className="w-full bg-ink py-24 sm:py-32"><div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-12"><div className="relative min-h-[480px] overflow-hidden"><img src={imageAssets.journal} alt="Coastal cafe stop in southern Sri Lanka" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute bottom-0 left-0 right-0 bg-ink/80 p-6 sm:p-8"><p className="font-serif text-xl italic leading-tight text-ivory">“A good rental doesn't just get you moving. It changes what your day can become.”</p></div></div><div className="flex flex-col justify-center"><p className="mb-5 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-copper"><span className="h-px w-9 bg-copper" />Galle Ride Co.</p><h2 className="font-display text-[clamp(2.5rem,4.4vw,4rem)] uppercase leading-[.9] tracking-[-.03em] text-ivory">Made for the way you travel</h2><div className="mt-9 grid grid-cols-2 gap-x-8 border-y border-ivory/15 py-5 sm:grid-cols-3">{reasons.map((reason, i) => <p key={reason} className="py-3 text-sm leading-5 text-ivory/75"><span className="mr-2 font-display text-lg text-copper">0{i + 1}</span>{reason}</p>)}</div><div className="mt-10 grid grid-cols-2 gap-y-8 sm:grid-cols-4">{stats.map(([value, label]) => <div key={label}><span className="block font-display text-3xl uppercase text-copper">{value}</span><span className="mt-1 block text-[10px] font-bold uppercase tracking-[.13em] text-ivory/55">{label}</span></div>)}</div></div></div></section>;
+}
