@@ -41,9 +41,9 @@ export function App() {
       </main>
       <Footer />
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
-      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-ink/15 bg-ivory p-2 shadow-[0_-6px_20px_rgba(16,24,32,.14)] sm:hidden">
-        <a href="https://wa.me/94770000000" className="flex items-center justify-center gap-2 py-3 text-[10px] font-black uppercase tracking-[.12em] text-ink"><MessageCircleIcon size={15} /> WhatsApp</a>
-        <button onClick={openBooking} className="bg-copper py-3 text-[10px] font-black uppercase tracking-[.12em] text-ink">Book bike</button>
+      <div className="fixed inset-x-0 bottom-0 z-40 flex overflow-hidden border-t border-ink/15 bg-ivory p-2 shadow-[0_-6px_20px_rgba(16,24,32,.14)] sm:hidden">
+        <a href="https://wa.me/94770000000" className="flex min-w-0 flex-1 basis-0 items-center justify-center gap-2 whitespace-nowrap px-2 py-3 text-[10px] font-black uppercase tracking-[.08em] text-ink"><MessageCircleIcon size={15} /> WhatsApp</a>
+        <button onClick={openBooking} className="min-w-0 flex-1 basis-0 whitespace-nowrap bg-copper px-2 py-3 text-[10px] font-black uppercase tracking-[.08em] text-ink">Book bike</button>
       </div>
     </div>);
 

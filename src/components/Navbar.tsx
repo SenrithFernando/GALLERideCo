@@ -27,9 +27,9 @@ export function Navbar({ onBook }: NavbarProps) {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-[background-color,padding,box-shadow] duration-300 ${scrolled ? "bg-ink/95 py-3 shadow-lg backdrop-blur-md" : "bg-transparent py-5"}`}>
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12" aria-label="Primary navigation">
-        <button onClick={() => navigate("home")} className="group flex items-center gap-3 text-left" aria-label="Galle Ride Co. home">
+        <button onClick={() => navigate("home")} className="group flex min-w-0 items-center gap-2 text-left sm:gap-3" aria-label="Galle Ride Co. home">
           <span className="grid h-9 w-9 place-items-center border border-copper text-[11px] font-black tracking-[-0.12em] text-copper transition-transform duration-300 group-hover:scale-95">GR</span>
-          <span className="font-display text-xl uppercase tracking-[0.12em] text-ivory sm:text-2xl">Galle Ride <i className="font-serif font-normal normal-case tracking-normal">Co.</i></span>
+          <span className="font-display text-lg uppercase tracking-[0.08em] text-ivory sm:text-2xl sm:tracking-[0.12em]">Galle Ride <i className="font-serif font-normal normal-case tracking-normal">Co.</i></span>
         </button>
         <div className="hidden items-center gap-7 lg:flex">
           {links.map(([label, id]) => <button key={id} onClick={() => navigate(id)} className="text-[11px] font-bold uppercase tracking-[0.15em] text-ivory/75 transition-colors duration-200 hover:text-copper">{label}</button>)}
