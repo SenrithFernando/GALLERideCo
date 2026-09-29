@@ -16,8 +16,10 @@ import { FAQ } from "./components/FAQ";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
 import { BookingModal } from "./components/BookingModal";
+import { AdminPanel } from "./components/AdminPanel";
 
 export function App() {
+  if (window.location.pathname === "/admin") return <AdminPanel />;
   const [bookingOpen, setBookingOpen] = useState(false);
   const openBooking = () => setBookingOpen(true);
 
