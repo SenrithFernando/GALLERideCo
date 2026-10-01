@@ -17,19 +17,22 @@ import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
 import { BookingModal } from "./components/BookingModal";
 import { AdminPanel } from "./components/AdminPanel";
+import { BikeCategory } from "./data/content";
 
 export function App() {
   if (window.location.pathname === "/admin") return <AdminPanel />;
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [fleetCategory, setFleetCategory] = useState<BikeCategory>("All");
   const openBooking = () => setBookingOpen(true);
+  const viewMatches = (category: BikeCategory) => { setFleetCategory(category); window.setTimeout(() => document.getElementById("fleet")?.scrollIntoView({ behavior: "smooth", block: "start" }), 0); };
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-ivory font-sans text-ink">
       <Navbar onBook={openBooking} />
       <main>
-        <Hero onBook={openBooking} />
+        <Hero onBook={openBooking} onViewMatches={viewMatches} />
         <BrandStory />
-        <Fleet onBook={openBooking} />
+        <Fleet onBook={openBooking} selectedCategory={fleetCategory} />
         <HowItWorks />
         <Requirements />
         <Destinations />

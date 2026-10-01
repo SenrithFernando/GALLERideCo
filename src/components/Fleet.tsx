@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { bikes, BikeCategory } from "../data/content";
 import { BikeCard } from "./BikeCard";
 import { BikeDetailModal } from "./BikeDetailModal";
 
-interface FleetProps {onBook: () => void;}
+interface FleetProps {onBook: () => void; selectedCategory?: BikeCategory;}
 const categories: BikeCategory[] = ["All", "Scooters", "Motorbikes", "Premium"];
 
-export function Fleet({ onBook }: FleetProps) {
+export function Fleet({ onBook, selectedCategory }: FleetProps) {
   const [active, setActive] = useState<BikeCategory>("All");
   const [selectedBike, setSelectedBike] = useState<(typeof bikes)[number] | null>(null);
+  useEffect(() => { if (selectedCategory) setActive(selectedCategory); }, [selectedCategory]);
   const filtered = active === "All" ? bikes : bikes.filter((b) => b.category === active);
   return (
     <section id="fleet" className="w-full bg-ink py-24 sm:py-32">
